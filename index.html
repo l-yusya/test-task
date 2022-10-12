@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Test task Kyianets</title>
+  <meta name="description" content="Test task" />
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  <main>
+    <div class="container">
+      <section class="form__parent" id="create">
+        <h2 class="form__title">My test task</h2>
+        <form id="create-form" action="/" method="POST">
+          <fieldset>
+            <legend>Create an account</legend>
+            <label for="email">Email <span class="alert">(required)</span></label>
+              <input type="email" id="email" name="email" required />
+            <label for="password">Password <span class="alert">(required)</span></label>
+              <input type="password" id="password" name="password" required />
+            <button type="button" id="submit" class="btn">Submit</button>
+            <!-- <input id="submit" type="submit" value="Submit" form="create-form" /> -->
+          </fieldset>
+          <div id="status__container">
+            <p class="status__text"></p>
+            <img src="welcome.png" alt="Welcome message" class="status__img">
+          </div>
+        </form>
+        <div class="confirmPopup">
+          <div class="popUp" id="popUp">
+              <h3 class="confirmation__text">Please confirm account creation for ${userEmail}</h3>
+              <button type="button" id="cancel" class="btn cancel">Cancel</button>
+              <button type="button" href="/" id="confirm" class="btn confirm">Confirm</button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__separator"></div>
+      <div class="footer__rights">
+        <p class="footer__rights--copyright">©Created by Yuliia Kyianets</p>
+        <p class="footer__rights--reserved">All rights reserved</p>
+      </div>
+    </div>
+
+  </footer>
+  <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
