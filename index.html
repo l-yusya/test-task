@@ -23,22 +23,21 @@
               <input type="email" id="email" name="email" required />
             <label for="password">Password <span class="alert">(required)</span></label>
               <input type="password" id="password" name="password" required />
-            <button type="button" id="submit" class="btn">Submit</button>
-            <!-- <input id="submit" type="submit" value="Submit" form="create-form" /> -->
+            <button type="submit" id="submit" class="btn">Submit</button>
           </fieldset>
-          <div id="status__container">
-            <p class="status__text"></p>
-            <img src="welcome.png" alt="Welcome message" class="status__img">
-          </div>
         </form>
         <div class="confirmPopup">
-          <div class="popUp" id="popUp">
-              <h3 class="confirmation__text">Please confirm account creation for ${userEmail}</h3>
-              <button type="button" id="cancel" class="btn cancel">Cancel</button>
-              <button type="button" href="/" id="confirm" class="btn confirm">Confirm</button>
+          <div id="popUp">
+            <h3 id="confirmation__text"></h3>
+            <button type="button" id="cancel" class="btn cancel">Cancel</button>
+            <button type="button" href="/" id="confirm" class="btn confirm">Confirm</button>
           </div>
         </div>
       </section>
+      <div id="status__container">
+        <p id="status__text"></p>
+        <img src="welcome.png" alt="Welcome message" class="status__img">
+      </div>
     </div>
   </main>
   <footer class="footer">

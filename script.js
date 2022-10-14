@@ -1,22 +1,23 @@
 (function () {
   const form = document.getElementById("create-form");
   const submit = document.getElementById("submit");
-  const email = document.getElementById("email");
-  let userEmail = [];
+  let userEmail;
 
-  form.addEventListener("submit", (e) => {
+
+  document.querySelector('form').addEventListener('submit', (e) => {
     e.preventDefault();
-    userEmail.push(email.value);
+    const data = Object.fromEntries(new FormData(e.target).entries());
+    userEmail = data.email;
+    console.log(userEmail);
+    openPopUp();
   });
 
-  const confirmText = document.getElementsByClassName("confirmation__text");
-
+  
   function openPopUp() {
     document.getElementById("popUp").style.display = "block";
-    confirmText.innerHTML = `Hello, user with email ${userEmail}!`;
+    document.getElementById("confirmation__text").innerHTML = `Please confirm account creation for <em> ${userEmail} </em>`;
   }
 
-  submit.addEventListener("click", openPopUp);
 
   const cancel = document.getElementById("cancel");
 
@@ -27,14 +28,14 @@
   cancel.addEventListener("click", closePopUp);
 
   const confirm = document.getElementById("confirm");
-  const status = document.getElementById("status");
+  const status = document.getElementById("status__text");
+  // const welcomeMessage = document.getElementById("status__container");
   
   function handleSubmit() {
     closePopUp();
     form.style.display = "none";
-    const welcomeMessage = document.getElementById("status__container");
-    welcomeMessage.style.display = "block";
-    // status.innerHTML = "Hello, user with email !";
+    document.getElementById("status__container").style.display = "block";
+    status.innerHTML = `Hello, user with email <em>${userEmail}</em>!`;
   }
 
   confirm.addEventListener("click", handleSubmit);
